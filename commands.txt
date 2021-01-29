@@ -1,0 +1,14 @@
+All commands:
+
+• list • exit • quit • give • read • enter • go • climb • put • insert • pull • dive • jump
+• back • catch • grab • explore • pick • pluck • wave • exit1 • exit2 • exit3 • exit4 
+• exit5 • exit6 • exit7 • exit8 • exit9
+
+Level0:
+
+go
+read
+enter
+read
+tyRgU69diqq
+
