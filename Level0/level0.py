@@ -45,9 +45,18 @@ for (i, char) in enumerate(plaintext_list):
 plaintext = ''.join(plaintext_list)
 print(plaintext)
 
+keys=list("abcdefghijklmnopqrstuvwxyz")
+cipher_text=list("poiuytrewzckjhgfdsamnbvlxq")
+
+dict = {}
+for i, char in enumerate(keys):
+    dict[char] = cipher_text[i]
+
+print(dict)
+
 text1 = "irst *h *** er*ft he***es .* s** ***nse e, the rei snot hin** fi nterest in the*h*** er .S* *e**the* *ter *h *** ers*i ***e**re inte re stin *th*nthis*n e!Th e*** e*se *** rthi s*es sa* eisa si***es ** s tit*ti on*i*herin*h i*h*i* it sh**e *eensh i*te d**8 ****es. Th e **ss**r *is t*R**03* i* **ith**tthe ***tes. Thi sisthef"
 
-text2 = "irst ih pjo ergft heipbes .P sxg nipnse e, the rei snot hinrg ti nterest in theihpjo er .Sg jegtthek pter ih pjo ersvi kkoejgre inte re stin rthpnthisgn e!Th eigu ense utg rthi smes sar eisa sijfkes no s titnti oniifherinvh iihuir it shpbe oeensh itte dox8 fkpies. Th e fpssvgr uis txRrN03u id dvithgntthe dngtes. Thi sisthef"
+text2 = "irst ih pjo ergft heipbes .P sxg nipnse e, the rei snot hinrg ti nterest in theihpjo er .Sg jegtthek pter ih pjo ersvi kkoejgre inte re stin rthpnthisgn e!Th eigu ense utg rthi smes sar eisa sijfkes no s titnti oniifherinvh iihuir it shpbe oeensh ifte dox8 fkpies. Th e fpssvgr uis txRrN03u id dvithgntthe dngtes. Thi sisthef"
 
 list1 = list(text1)
 list2 = list(text2)

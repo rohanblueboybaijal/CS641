@@ -1,0 +1,7 @@
+Single letter analysis: 'y' -> 'e' and 'm' -> 't'
+
+Trigram Analysis: 'mey' -> 'the' (The most common trigram with 't*e').
+
+Digram Analysis: 'am' -> 'st' (We used common bigrams in english vocabulary ending in 't' and saw that 'st' was the second most common after 'at' but since the probability of 'a' getting mapped to 'a' was quite less we chose the second option), 'ys' -> 'er' (Most common bigram starting with 'e') and 'wa' -> 'is' (We used common bigrams in english vocabulary ending in 's' and saw that 'is' was the second most common after 'es' but since 'y' was already mapped to 'e', we chose the second option) and 'wh' -> 'in' (Most common bigram starting with 'i').
+
+Semantic Analysis: After this, the last sentence was guessed to be in continuation with first sentence and hence we deduced the mapping of 't' with 'f' ("Thi sisthe(t)irst"). We saw that 'p', 'y' and 'a' were occuring individually which is not possible and hence deduced that spacing was not relevant here. Similarly nothin(r) was deduced to be nothin'g' ('r' mapped to 'g'). shifte(u) was deduced to be shifte'd' ('u' mapped to 'd'). (o)een was deduced to be 'b'een ('o' mapped to 'b'). Shifted b(x) 8 was deduced to be b'y' 8 ('x' mapped to 'y'). Nothing (g)f interest mapped to 'o'f. ('g'->'o'). Interesting th(p)n this was deduced to be th'a'n ('p'->'a'). Similarly, "m"essage, First "c"hamber of the "c"a"v"es and As 'y'ou can see helped to decode other alphabets as well. Thus, using above mentioned techniques, the cipher was solved. 
