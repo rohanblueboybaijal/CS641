@@ -1,0 +1,17 @@
+	Password for this level is an element of the multiplicative
+	group Z_p^* where p = 19807040628566084398385987581 is a prime. 
+	You carefully look around and find three pairs of numbers of the
+	form (a, password * g^a) where g is a element in Z_p^* and a is 
+	an integer. The g in each pair is the same.
+
+		(324,  13820704073802119244527501963)
+		(2345, 13250703864738017529092081924)
+		(9513, 12855368516529211269848301050)
+
+	You desperately start searching for more numbers and find
+
+		1___4_2______0___94____9
+
+	This looks like g but most of the entries are missing. Speak 
+	out the password loudly to pass this level!
+
