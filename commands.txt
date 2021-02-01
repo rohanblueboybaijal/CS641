@@ -12,3 +12,10 @@ enter
 read
 tyRgU69diqq
 
+Level2:
+
+go
+Get the key by solving the Morse Code -> SECURITY
+go
+read
+OPEN_SESAME
