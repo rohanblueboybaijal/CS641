@@ -1,0 +1,3 @@
+Q4. Analysis
+
+We could read the ciphertext as soon as we entered level 2 but after some exploration we found another text with Morse code (which read SECURITY). The text also mention PLAY FAIR. After some readings on ciphers we noticed something called "Playfair cipher". This cipher also required a key and we thought of using "SECURITY" as the key. 
