@@ -19,3 +19,12 @@ Get the key by solving the Morse Code -> SECURITY
 go
 read
 OPEN_SESAME
+
+Level3:
+
+go
+enter
+give
+thrnxxtzy
+back
+back
