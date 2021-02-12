@@ -76,5 +76,11 @@ int main(void)
 
 	// Function Call 
 	print_solution(a, b, c); 
+
+	a = 324;
+	b = 2345;
+	c = -9512;
+
+	print_solution(a,b,c);
 	return 0; 
 } 
