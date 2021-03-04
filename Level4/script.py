@@ -1,0 +1,12 @@
+print ("PolkaDots")
+print ("f5breachers")
+print ("4")
+print ("read")
+print ("password")
+print ("c")
+file = open("input_random.txt", "r+")
+for x in file:
+    print (x)
+    print ("c")
+print ("back")
+print ("exit")
