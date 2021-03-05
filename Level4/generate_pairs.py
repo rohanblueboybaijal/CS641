@@ -40,6 +40,15 @@ inv_map = {
     '1111' : 'u'
 }
 
+reverse_permutation = [40, 8, 48, 16, 56, 24, 64, 32,
+39,	7, 47, 15, 55, 23, 63, 31,
+38,	6, 46, 14, 54, 22, 62, 30,
+37,	5, 45, 13, 53, 21, 61, 29,
+36,	4, 44, 12, 52, 20, 60, 28,
+35,	3, 43, 11, 51, 19, 59, 27,
+34,	2, 42, 10, 50, 18, 58, 26,
+33,	1, 41, 9,  49, 17, 57, 25,]
+
 def bits_to_char(x):
     i = 0
     plaintext = ''
@@ -49,12 +58,17 @@ def bits_to_char(x):
         plaintext += inv_map[block]
     return plaintext
 
+def inverse_IP(x):
+    inverse = ""
+    x = format(int(x, 16), '0>64b')
+    for i in range(64):
+        inverse += x[reverse_permutation[i]-1]
+    inverse = hex(int(inverse, 2))[2:]
+    return inverse 
 
-
-required_xor = '405c000004000000'
+required_xor = inverse_IP('405c000004000000')
 number = int(required_xor, 16)
 X = format(number, '0>64b')
-print(len(X))
 
 plaintext_bits = open('./plaintext_bits.txt', 'a')
 plaintext_pairs = open('./plaintext_pairs.txt', 'a')
@@ -70,12 +84,12 @@ for i in range(2**20):
     p2 = bits_to_char(x2)
 
     plaintext_bits.write(x1)
-    plaintext_bits.write('\n')
+    plaintext_bits.write(' ')
     plaintext_bits.write(x2)
     plaintext_bits.write('\n')
 
     plaintext_pairs.write(p1)
-    plaintext_pairs.write('\n')
+    plaintext_pairs.write(' ')
     plaintext_pairs.write(p2)
     plaintext_pairs.write('\n')
 
