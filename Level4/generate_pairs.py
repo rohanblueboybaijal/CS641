@@ -84,12 +84,12 @@ for i in range(2**20):
     p2 = bits_to_char(x2)
 
     plaintext_bits.write(x1)
-    plaintext_bits.write(' ')
+    plaintext_bits.write('\n')
     plaintext_bits.write(x2)
     plaintext_bits.write('\n')
 
     plaintext_pairs.write(p1)
-    plaintext_pairs.write(' ')
+    plaintext_pairs.write('\n')
     plaintext_pairs.write(p2)
     plaintext_pairs.write('\n')
 
