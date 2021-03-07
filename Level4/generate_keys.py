@@ -88,29 +88,14 @@ def main():
         for i in range(0,len(content),2):
             expansion_output.append((content[i],content[i+1]))
     keys=[]
-    # print(expansion_output[i][0][6*j:6*j+6])
-    # with open(keys.txt) as f:
+
     for i in range(len(expansion_output)):
-        print(i)
         for j in range(0,8):
             a=generate_keys(int(expansion_output[i][0][6*j:6*j+6],2), int(expansion_output[i][1][6*j:6*j+6],2), int(S_box_output[i][4*j:4*j+4],2), j)
-            # if len(a)!=0:
             keys.append(a)
-            # else:
-            #     keys.append('\n')
-                # f.write(a.split())
-                # f.write('\n')
 
     with open("keys.txt", "w") as txt_file:
         for line in keys:
             txt_file.write(" ".join(line) + "\n")  
         
 main()
-
-
-
-
-
-
-
-

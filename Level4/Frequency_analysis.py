@@ -19,6 +19,8 @@ with open(file) as f:
 
                     cand_keys[i][a]+=1
 
+file = open("keys_frequency.txt", "w")
+
 for i in range(8):
     s=sum(cand_keys[i])/64
     m=max(cand_keys[i])
@@ -28,5 +30,6 @@ for i in range(8):
             f=j
             break
     if f>0:
-        print(f,m,s)
+        file.write(str(f) + " " + str(m) + " " + str(s))
+        file.write('\n')
 
