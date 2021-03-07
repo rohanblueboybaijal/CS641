@@ -321,16 +321,3 @@ int main(int argc, char **argv) {
     return 0;
 }
 
-// int main() {
-//     BYTE p[] = "fghijklm";
-//     BYTE b[64];
-//     BYTE *packed = p;
-//     BYTE *binary = b;
-//     unpack8(packed,binary);
-//     for(int i=0; i<64; i++) {
-//         int x = *binary++;
-//         printf("%d ", x);
-//     }
-
-//     return 0;
-// }
