@@ -262,64 +262,75 @@ void tobyte(char in[], BYTE inp[]) {
     }
 }
 
-void tostr(BYTE out[]) {
+char *tostr(BYTE out[]) {
     int off, i;
+    char *ans;
+    ans = (char *)malloc(16*1);
     for (i = 0; i < 8; ++i) {
         off = out[i];
-        printf("%c%c", (char)('f' + (off / 16)), (char)('f' + (off % 16)));
+        ans[2*i] = (char)('f' + (off / 16));
+        ans[2*i+1] = (char)('f' + (off % 16));
+        // printf("%c%c", (char)('f' + (off / 16)), (char)('f' + (off % 16)));
     }
-    printf("\n");
+    return (char *)ans;
+    // printf("\n");
 }
 
-// int main(int argc, char **argv) {
-//     FILE *fp;
-//     char line[100];
+int main(int argc, char **argv) {
+    FILE *fp;
+    char line[100];
 
-//     if (argc < 2) {
-//         printf("Expected file name containing list of keys\n");
-//         return 1;
-//     }
-
-//     fp = fopen(argv[1], "r");
-//     if (fp == NULL)
-//         return 1;
-
-//     BYTE string[100];
-//     printf("Enter input to be encrypted: ");
-//     scanf("%s", string);
-
-//     while (fgets(line, sizeof line, fp)) {
-//         BYTE input[100];
-//         BYTE outs[100];
-//         tobyte(string, input);
-
-//         int i;
-//         BYTE k[56];
-//         for (i = 0; i < 56; i++) {
-//             k[i] = line[i] - '0';
-//         }
-//         key_as_bits(0, k, 6);
-
-//         des(input, outs, 6, 'N');
-//         printf("%s", line);
-//         tostr(outs);
-//         printf("\n");
-//     }
-
-//     fclose(fp);
-//     return 0;
-// }
-
-int main() {
-    BYTE p[] = "fghijklm";
-    BYTE b[64];
-    BYTE *packed = p;
-    BYTE *binary = b;
-    unpack8(packed,binary);
-    for(int i=0; i<64; i++) {
-        int x = *binary++;
-        printf("%d ", x);
+    if (argc < 2) {
+        printf("Expected file name containing list of keys\n");
+        return 1;
     }
 
+    fp = fopen(argv[1], "r");
+    if (fp == NULL)
+        return 1;
+
+    char string[16], cipher[16];
+    printf("Enter input to be encrypted: ");
+    scanf("%s", string);
+    printf("Enter expected output: ");
+    scanf("%s", cipher);
+
+    while (fgets(line, sizeof line, fp)) {
+        BYTE input[100];
+        BYTE outs[100];
+        tobyte(string, input);
+
+        int i;
+        BYTE k[56];
+        for (i = 0; i < 56; i++) {
+            k[i] = line[i] - '0';
+        }
+        key_as_bits(0, k, 6);
+
+        des(input, outs, 6, 'N');
+        // printf("%s", line);
+        char *ans = tostr(outs);
+        if (strcmp(ans, cipher) == 0) {
+            printf ("Found\n");
+            printf ("%s", line);
+        }
+        // printf("\n");
+    }
+
+    fclose(fp);
     return 0;
 }
+
+// int main() {
+//     BYTE p[] = "fghijklm";
+//     BYTE b[64];
+//     BYTE *packed = p;
+//     BYTE *binary = b;
+//     unpack8(packed,binary);
+//     for(int i=0; i<64; i++) {
+//         int x = *binary++;
+//         printf("%d ", x);
+//     }
+
+//     return 0;
+// }
