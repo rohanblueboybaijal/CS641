@@ -1,0 +1,16 @@
+print ("PolkaDots")
+print ("f5breachers")
+print ("5")
+print ("go")
+print ("wave")
+print ("dive")
+print ("go")
+print ("read")
+file = open("plaintexts.txt", "r+")
+for x in file:
+    x = x.split(" ")
+    for word in x:
+        print (word)
+        print ("c")
+print ("back")
+print ("exit")

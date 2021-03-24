@@ -28,3 +28,23 @@ give
 thrnxxtzy
 back
 back
+
+Level 4:
+
+[ commands to pull wand]
+enter, jump, jump, back, dive, pull
+
+[Commands to free spirit after getting wand]
+, back, back, enter, wave, [further commands used to clear level 3 (same as that used in assignment 3) and reach back at first page of level 4]
+
+, read, password                         
+
+ [We had to use `back` after the dive otherwise we ran out of breath and died]
+
+Level 5:
+
+go
+wave
+dive
+go
+read
