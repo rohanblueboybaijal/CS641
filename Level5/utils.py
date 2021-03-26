@@ -3,23 +3,22 @@ F = ffield.FField(7)
 
 mapping = {}
 inverse_mapping = {}
+
 for i in range(16):
     enc = format(i, '0>4b')
     mapping[enc] = chr(ord('f') + i)
     inverse_mapping[chr(ord('f') + i)] = enc
 
-
-def Exponentiation(a,n):
+def Expo(a,n):
     if(n==0):
         return 1
-    if(n==1):
+    elif(n==1):
         return a
-
-    if(n%2==0):
-        ans = F.Multiply(Exponentiation(a,n/2),Exponentiation(a,n/2))
-        return ans
+    elif(n%2==0):
+        ans = F.Multiply(Expo(a,n/2),Expo(a,n/2))
+        return ans 
     else:
-        ans = F.Multiply(a, F.Multiply(Exponentiation(a,n/2),Exponentiation(a,n/2))
+        ans = F.Multiply(a, F.Multiply(Expo(a,n//2),Expo(a,n//2)))
         return ans
 
 def Add(a,b):
@@ -45,10 +44,28 @@ def E(p,e):
 def EAEAE(A,e,p):
     c = []
     for i in range(8):
-        c.append(inverse_mapping[p[2*i:2*i+2]])
+        c.append(int(inverse_mapping[p[2*i]] + inverse_mapping[p[2*i+1]], 2))
     c = E(c,e)
     c = MatrixMultiplication(A,c)
     c = E(c,e)
     c = MatrixMultiplication(A,c)
     c = E(c,e)
     return c
+
+def make_vector(p):
+    vec = []
+    for i in range(8):
+        vec.append(int(inverse_mapping[p[2*i]] + inverse_mapping[p[2*i+1]], 2))
+    return vec
+
+def refine_outputs(f, n):
+    read_file = open(f, "r");
+    write_file = open(n, "w+");
+    for i in range(8):
+        for j in range(128):
+            line = read_file.readline().split()
+            write_file.write(line[0])
+            write_file.write(" ")
+        write_file.write("\n")
+    read_file.close()
+    write_file.close()
