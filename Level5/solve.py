@@ -16,11 +16,9 @@ for i in range(8):
     outs = [16*(ord(outputs[j][2*i]) - ord('f')) + (ord(outputs[j][2*i+1]) - ord('f')) for j in range(128)]
 
     for j in range(1, 127):
-        # print (j)
         for k in range(1, 128):
             f = 1
             for x, y in zip(ins, outs):
-                # print(x, y)
                 if y != Expo(Multiply(Expo(Multiply(Expo(x, j), k), j), k), j):
                     f = 0
                     break 
