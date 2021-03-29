@@ -44,4 +44,26 @@ for off_d in range(2,8):
                 A[i][c] = k
                 break
 
+# Finding the two candidates for (7,0)
+
+# c=0
+# i=7
+# ins = [16*(ord(inputs[c][j][2*c]) - ord('f')) + (ord(inputs[c][j][2*c+1]) - ord('f')) for j in range(128)]
+# outs = [16*(ord(outputs[c][j][2*(i)]) - ord('f')) + (ord(outputs[c][j][2*(i)+1]) - ord('f')) for j in range(128)]
+# for k in range(1,128):
+#     A[i][c] = k
+#     f = 1
+#     for index, (x, y) in enumerate(zip(ins, outs)):
+#         p = [0,0,0,0,0,0,0,0]
+#         p[c] = x
+#         cipher = EAEAE(A,exponents,p)
+#         if y != cipher[i]:
+#             f = 0
+#             A[i][c] = 0
+#             break 
+#     if f:
+#         A[i][c] = k
+#         print("Hi", k)
+
+
 print(A)
