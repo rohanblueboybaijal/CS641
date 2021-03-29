@@ -28,7 +28,8 @@ def Multiply(a,b):
     return F.Multiply(a,b)
 
 def MatrixMultiplication(A,v):
-    rows, cols = A.shape
+    rows = 8
+    cols = 8
     # v will have the same number of rows and only single column
     ans = [0,0,0,0,0,0,0,0]
     for i in range(rows):
@@ -38,13 +39,15 @@ def MatrixMultiplication(A,v):
 
 def E(p,e):
     for i in range(8): 
-        p[i] = Exponentiation(p[i], e[i])
+        p[i] = Expo(p[i], e[i])
     return p
 
 def EAEAE(A,e,p):
     c = []
-    for i in range(8):
-        c.append(int(inverse_mapping[p[2*i]] + inverse_mapping[p[2*i+1]], 2))
+    for i in range(len(p)):
+        c.append(p[i])
+    # for i in range(8):
+    #     c.append(int(inverse_mapping[p[2*i]] + inverse_mapping[p[2*i+1]], 2))
     c = E(c,e)
     c = MatrixMultiplication(A,c)
     c = E(c,e)
@@ -52,10 +55,26 @@ def EAEAE(A,e,p):
     c = E(c,e)
     return c
 
+def to_encoding(v):
+    ans = ""
+    for i in range(8):
+        bin_str = format(v[i], '0>8b')
+        char1 = chr(ord('f') + int(bin_str[:4],2))
+        char2 = chr(ord('f') + int(bin_str[4:],2))
+        ans += char1
+        ans += char2
+    return ans
+
+def to_ascii(v):
+    ans = ""
+    for i in range(8):
+        ans += chr(v[i])
+    return ans
+
 def make_vector(p):
     vec = []
     for i in range(8):
-        vec.append(int(inverse_mapping[p[2*i]] + inverse_mapping[p[2*i+1]], 2))
+        vec.append(16*(ord(p[2*i]) - ord('f')) + (ord(p[2*i+1]) - ord('f')))
     return vec
 
 def refine_outputs(f, n):
