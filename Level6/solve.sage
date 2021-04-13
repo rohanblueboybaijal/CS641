@@ -38,7 +38,6 @@ def find_roots(pol, modulus, m, k):
     return final
 
 def find_message(padding, max_bits):
-    global e, C
     padding_bin = ''.join([format(ord(c), '0>8b') for c in padding])
     
     for l in range(0, max_bits+1, 8):
