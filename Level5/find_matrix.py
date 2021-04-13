@@ -67,3 +67,4 @@ for off_d in range(2,8):
 
 
 print(A)
+print(exponents)

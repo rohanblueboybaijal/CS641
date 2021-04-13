@@ -9,7 +9,7 @@ cipher = "msjjkrlmhimumuilloghgikgfllqkjgi"
 cipher1 = cipher[:16]
 cipher2 = cipher[16:]
 
-out1 = make_vector(cipher1)
+out1 = make_vector(cipher)
 out2 = make_vector(cipher2)
 
 p = [0 for _ in range(8)]
