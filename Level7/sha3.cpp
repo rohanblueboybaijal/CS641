@@ -102,7 +102,7 @@ int main(){
             index = index*2 + state[k/(64*5)][(k/64)%5][k%64 + j];
         printf("%c", hexa[index]);
         k += 4;
-        if(k == 256)
+        if(k%256 == 0)
             printf("\n");
     }
 
